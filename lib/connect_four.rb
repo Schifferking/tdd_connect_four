@@ -18,4 +18,8 @@ class ConnectFour
   def number?(input)
     input.to_i.to_s == input
   end
+
+  def verify_number(number, min, max)
+    return number if number.between?(min, max)
+  end
 end
