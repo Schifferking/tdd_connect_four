@@ -7,7 +7,7 @@ class Player
     @token
   end
 
-  def enter_number
+  def enter_input
     gets.chomp.to_i
   end
 end
