@@ -3,7 +3,7 @@ class Player
     @token = token
   end
 
-  def get_token
+  def obtain_token
     @token
   end
 
