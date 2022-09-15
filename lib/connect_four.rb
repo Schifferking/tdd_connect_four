@@ -14,4 +14,8 @@ class ConnectFour
   def prompt(min = 0, max = 7)
     print "Please enter a number between #{min} and #{max}: "
   end
+
+  def number?(input)
+    input.to_i.to_s == input
+  end
 end
