@@ -22,4 +22,12 @@ class ConnectFour
   def verify_number(number, min, max)
     return number if number.between?(min, max)
   end
+
+  def obtain_number(player, min, max)
+    loop do
+      prompt(min, max)
+      input = player.enter_input
+      return input.to_i if number?(input) && verify_number(input.to_i, min, max)
+    end
+  end
 end
