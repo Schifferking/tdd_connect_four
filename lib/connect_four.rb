@@ -30,4 +30,12 @@ class ConnectFour
       return input.to_i if number?(input) && verify_number(input.to_i, min, max)
     end
   end
+
+  def ask_token_position(player)
+    puts('Row')
+    row = obtain_number(player, 0, 6)
+    puts('Column')
+    column = obtain_number(player, 0, 7)
+    [row, column]
+  end
 end
