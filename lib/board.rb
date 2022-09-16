@@ -4,6 +4,6 @@ class Board
   end
 
   def create_board
-    @grid = Array.new(7) { Array.new(6) { nil } }
+    @grid = Array.new(6) { Array.new(7) { nil } }
   end
 end
