@@ -8,6 +8,6 @@ class Player
   end
 
   def enter_input
-    gets.chomp.to_i
+    gets.chomp
   end
 end
