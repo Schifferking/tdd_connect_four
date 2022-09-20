@@ -12,4 +12,8 @@ class Board
   def cell_empty?(row, column)
     @grid[row][column].empty?
   end
+
+  def board_empty?
+    @grid.flatten.all?('')
+  end
 end
