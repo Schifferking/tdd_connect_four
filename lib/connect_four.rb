@@ -31,7 +31,7 @@ class ConnectFour
     end
   end
 
-  def obtain_column(player)
+  def enter_column(player)
     obtain_number(player, 0, 7)
   end
 end
