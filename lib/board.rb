@@ -16,4 +16,8 @@ class Board
   def board_empty?
     @grid.flatten.all?('')
   end
+
+  def obtain_column(index)
+    (0..5).map { |row| @grid[row][index] }
+  end
 end
