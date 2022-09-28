@@ -20,4 +20,8 @@ class Board
   def obtain_column(index)
     (0..5).map { |row| @grid[row][index] }
   end
+
+  def column_full?(column)
+    column.none? { |element| element == '' }
+  end
 end
