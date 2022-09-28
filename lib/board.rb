@@ -22,6 +22,6 @@ class Board
   end
 
   def column_full?(column)
-    column.none? { |element| element == '' }
+    column.none? { |element| element.empty? }
   end
 end
