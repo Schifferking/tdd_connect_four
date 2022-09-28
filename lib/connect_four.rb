@@ -31,11 +31,7 @@ class ConnectFour
     end
   end
 
-  def ask_token_position(player)
-    puts('Row')
-    row = obtain_number(player, 0, 6)
-    puts('Column')
-    column = obtain_number(player, 0, 7)
-    [row, column]
+  def obtain_column(player)
+    obtain_number(player, 0, 7)
   end
 end
