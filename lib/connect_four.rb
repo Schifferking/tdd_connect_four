@@ -39,4 +39,12 @@ class ConnectFour
     column = board.obtain_column(column_index)
     column_index unless board.column_full?(column)
   end
+
+  def obtain_column_index(player)
+    loop do
+      column_index = enter_column(player)
+      index = verify_column(column_index)
+      return index unless index.nil?
+    end
+  end
 end
