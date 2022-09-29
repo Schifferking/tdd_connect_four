@@ -34,4 +34,9 @@ class ConnectFour
   def enter_column(player)
     obtain_number(player, 0, 7)
   end
+
+  def verify_column(column_index)
+    column = board.obtain_column(column_index)
+    column_index unless board.column_full?(column)
+  end
 end
