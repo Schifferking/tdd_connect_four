@@ -34,4 +34,8 @@ class Board
       return [row, column_index] if cell_empty?(row, column_index)
     end
   end
+
+  def obtain_row(row_index)
+    @grid[row_index]
+  end
 end
