@@ -24,4 +24,8 @@ class Board
   def column_full?(column)
     column.none? { |element| element.empty? }
   end
+
+  def put_token(row, column, token)
+    @grid[row][column] = token
+  end
 end
