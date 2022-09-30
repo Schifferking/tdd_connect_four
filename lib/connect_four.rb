@@ -47,4 +47,10 @@ class ConnectFour
       return index unless index.nil?
     end
   end
+
+  def player_turn(player)
+    column_index = obtain_column_index(player)
+    row, column = board.search_empty_cell(column_index)
+    board.put_token(row, column, player.obtain_token)
+  end
 end
