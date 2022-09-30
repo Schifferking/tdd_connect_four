@@ -28,4 +28,10 @@ class Board
   def put_token(row, column, token)
     @grid[row][column] = token
   end
+
+  def search_empty_cell(column_index)
+    5.downto(0) do |row|
+      return [row, column_index] if cell_empty?(row, column_index)
+    end
+  end
 end
