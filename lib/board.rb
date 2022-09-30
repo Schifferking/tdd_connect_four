@@ -38,4 +38,13 @@ class Board
   def obtain_row(row_index)
     @grid[row_index]
   end
+
+  def horizontal_line?(row_index, token)
+    row = obtain_row(row_index)
+    0.upto(3) do |index|
+      return true if row[index..index + 3].all?(token)
+    end
+
+    false
+  end
 end
