@@ -47,4 +47,13 @@ class Board
 
     false
   end
+
+  def vertical_line?(column_index, token)
+    column = obtain_column(column_index)
+    0.upto(2) do |index|
+      return true if column[index..index + 3].all?(token)
+    end
+
+    false
+  end
 end
