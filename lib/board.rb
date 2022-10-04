@@ -70,5 +70,15 @@ class Board
      [[2, 0], [3, 1], [4, 2], [5, 3]],
      [[0, 3], [1, 2], [2, 1], [3, 0]],
      [[2, 6], [3, 5], [4, 4], [5, 3]]]
-  end  
+  end
+
+  def find_diagonals(coordinates)
+    diagonals = obtain_diagonals
+    found_diagonals = []
+    diagonals.each do |diagonal|
+      found_diagonals << diagonal if diagonal.include?(coordinates)
+    end
+
+    found_diagonals
+  end
 end
