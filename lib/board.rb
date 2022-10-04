@@ -95,4 +95,17 @@ class Board
 
     values
   end
+
+  def obtain_diagonals_values(diagonals)
+    diagonal_values = []
+    diagonals.each do |diagonal|
+      diagonal_values << obtain_cells_values(diagonal)
+    end
+
+    diagonal_values
+  end
 end
+
+b = Board.new
+diagonals = b.obtain_diagonals
+p b.obtain_diagonals_values([diagonals[0]])
