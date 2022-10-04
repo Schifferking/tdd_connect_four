@@ -85,4 +85,14 @@ class Board
   def obtain_cell_value(row, column)
     @grid[row][column]
   end
+
+  def obtain_cells_values(coordinates_list)
+    values = []
+    coordinates_list.each do |coordinates|
+      row, column = coordinates
+      values << obtain_cell_value(row, column)
+    end
+
+    values
+  end
 end
