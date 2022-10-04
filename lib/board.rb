@@ -81,4 +81,8 @@ class Board
 
     found_diagonals
   end
+
+  def obtain_cell_value(row, column)
+    @grid[row][column]
+  end
 end
