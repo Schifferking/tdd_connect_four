@@ -104,8 +104,24 @@ class Board
 
     diagonal_values
   end
-end
 
-b = Board.new
-diagonals = b.obtain_diagonals
-p b.obtain_diagonals_values([diagonals[0]])
+  def diagonal_line?(diagonals, token)
+    diagonals.each do |diagonal|
+      iterations = diagonal.length
+      if iterations == 4
+        return true if diagonal.all?(token)
+
+        next
+      end
+
+      iterations = 1 if iterations == 5
+      iterations = 2 if iterations == 6
+
+      0.upto(iterations) do |index|
+        return true if diagonal[index..index + 3].all?(token)
+      end
+    end
+
+    false
+  end
+end
