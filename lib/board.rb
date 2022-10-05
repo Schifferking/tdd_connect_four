@@ -124,4 +124,15 @@ class Board
 
     false
   end
+
+  def board_full?
+    false if board_empty?
+
+    0.upto(6) do |index|
+      column = obtain_column(index)
+      return false unless column_full?(column)
+    end
+
+    true
+  end
 end
