@@ -11,7 +11,7 @@ class ConnectFour
     @player_two = Player.new("\u26ab")
   end
 
-  def prompt(min = 0, max = 7)
+  def prompt(min = 0, max = 6)
     print "Please enter a number between #{min} and #{max}: "
   end
 
@@ -32,7 +32,7 @@ class ConnectFour
   end
 
   def enter_column(player)
-    obtain_number(player, 0, 7)
+    obtain_number(player, 0, 6)
   end
 
   def verify_column(column_index)
@@ -76,5 +76,16 @@ class ConnectFour
     return announce_draw if board.board_full?
 
     false
+  end
+
+  def draw_board
+    0.upto(5) do |row_index|
+      line = ''
+      0.upto(6) do |column|
+        line += '  ' if board.cell_empty?(row_index, column)
+        line += "#{board.obtain_cell_value(row_index, column)} "
+      end
+      puts "#{line}\n"
+    end
   end
 end
