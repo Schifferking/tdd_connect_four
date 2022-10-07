@@ -52,10 +52,11 @@ class ConnectFour
     column_index = obtain_column_index(player)
     row, column = board.search_empty_cell(column_index)
     board.put_token(row, column, player.obtain_token)
+    [row, column]
   end
 
   def announce_winner(token)
-    puts "The player with the #{token} token won!"
+    puts "The player with the #{token}token won!"
   end
 
   def announce_draw
@@ -79,6 +80,8 @@ class ConnectFour
   end
 
   def draw_board
+    puts "\n"
+
     0.upto(5) do |row_index|
       line = ''
       0.upto(6) do |column|
@@ -86,6 +89,24 @@ class ConnectFour
         line += "#{board.obtain_cell_value(row_index, column)} "
       end
       puts "#{line}\n"
+    end
+
+    puts "\n"
+  end
+
+  def turn_message(token)
+    puts "#{token}turn"
+  end
+
+  def game
+    player = @player_one
+    loop do
+      turn_message(player.obtain_token)
+      coordinates = player_turn(player)
+      draw_board
+      break if game_over?(player, coordinates)
+
+      player = player == @player_one ? @player_two : @player_one
     end
   end
 end
