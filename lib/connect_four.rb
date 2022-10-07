@@ -53,4 +53,28 @@ class ConnectFour
     row, column = board.search_empty_cell(column_index)
     board.put_token(row, column, player.obtain_token)
   end
+
+  def announce_winner(token)
+    puts "The player with the #{token} token won!"
+  end
+
+  def announce_draw
+    puts "It's a draw!"
+    true
+  end
+
+  def game_over?(player, coordinates)
+    token = player.obtain_token
+    diagonals_coordinates = board.find_diagonals(coordinates)
+    diagonals = board.obtain_diagonals_values(diagonals_coordinates)
+    if board.horizontal_line?(coordinates.first, token) ||
+       board.vertical_line?(coordinates.last, token) ||
+       board.diagonal_line?(diagonals, token)
+      announce_winner(token)
+      return true
+    end
+    return announce_draw if board.board_full?
+
+    false
+  end
 end
